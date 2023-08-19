@@ -34,6 +34,7 @@ body.orange {
 
 * {
   box-sizing: border-box;
+  transition: all 0.3s;
 }
 
 html,
@@ -54,4 +55,9 @@ body {
 
 main {
   margin-top: 60px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent);
 }

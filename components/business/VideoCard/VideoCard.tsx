@@ -7,6 +7,7 @@ import { roundViews } from "../../../utils/roundViews";
 import { Chip } from "../../ui/Chip/Chip";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface IProps {
   thumbnailUrl: string;
@@ -33,11 +34,11 @@ export const VideoCard: FC<IProps> = ({
   channelUrl,
   channelVerified,
 }) => {
+  const router = useRouter();
   return (
-    <Link
+    <div
       className={styles.videocard}
-      href={`/watch/${videoId}`}
-      target="_blank"
+      onClick={() => router.push(`/watch/${videoId}`)}
     >
       <div className={styles.thumbnailcontainer}>
         <Image
@@ -57,7 +58,7 @@ export const VideoCard: FC<IProps> = ({
         </Chip>
         <Chip>{dateAgo}</Chip>
       </div>
-      <Link href={channelUrl} className={styles.channelinfo} target="_blank">
+      <div className={styles.channelinfo}>
         {/* <img
           className={styles.avatar}
           src={channelAvatar}
@@ -66,7 +67,7 @@ export const VideoCard: FC<IProps> = ({
         <Chip fontSize="18px">
           {channelName} {channelVerified && <BiCheck />}
         </Chip>
-      </Link>
-    </Link>
+      </div>
+    </div>
   );
 };

@@ -1,2 +1,64 @@
 .mainpage {
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .navitem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: var(--text-header);
+      background-color: var(--element-background);
+      width: 50%;
+      height: 50px;
+    }
+  }
+
+  .searchcontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    .searchbar {
+      width: 70%;
+      height: 60px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2px;
+      transition: all 0.3s;
+      background-color: var(--element-background);
+
+      &:hover {
+        width: 90%;
+        border: 1px solid var(--element-hover-border);
+        border-radius: var(--round);
+      }
+
+      .searchicon {
+        width: 1.8em;
+        height: 1.8em;
+        fill: red;
+      }
+      .searchbar {
+        width: 100%;
+        height: 100%;
+        color: var(--text);
+        outline: none;
+        font-size: var(--text-large);
+        border: 1px solid var(--element-border);
+
+        &::placeholder {
+          color: var(--placeholder);
+        }
+
+        // &:focus-visible {
+        //   border: 1px solid var(--focus-visible);
+        //   border-radius: var(--round);
+        // }
+      }
+    }
+  }
 }
