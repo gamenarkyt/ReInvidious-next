@@ -1,1 +1,1 @@
-### Pet project Invidious frontend
+### Pet project Invidious frontend with NEXT Framework
