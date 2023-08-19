@@ -1,0 +1,57 @@
+// Variables
+:root {
+  --text-small: 14px;
+  --text-normal: 16px;
+  --text-large: 18px;
+  --text-header: 20px;
+}
+
+body {
+  --font-small: 1em;
+  --round: 8px;
+
+  // color palette
+  --text: white;
+  --accent: #f7768e;
+  --background: #0b0c0e;
+  --element-border: #0f1012;
+  --element-hover-border: var(--accent);
+  --element-background: #0d0e10;
+  --placeholder: gray;
+  --focus-visible: var(--accent);
+}
+
+body.orange {
+  --font-small: 1em;
+  --round: 8px;
+
+  // color palette
+  --text: white;
+  --accent: orange;
+  --background: #1a1b26;
+  //   --theme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100%;
+}
+
+// Global styles
+body {
+  font-size: var(--text-normal);
+  color: var(--text);
+  background-color: var(--background);
+}
+
+main {
+  margin-top: 60px;
+}
