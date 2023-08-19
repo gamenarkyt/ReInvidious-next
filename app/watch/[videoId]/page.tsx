@@ -7,8 +7,8 @@ import { useQuery } from "react-query";
 import { InvidiousApi } from "@/services/invidious.service";
 
 const page = ({}) => {
-  const searchParams = useParams();
-  const videoId = searchParams["videoId"] as string;
+  const params = useParams();
+  const videoId = params["videoId"] as string;
   const {
     data: videoData,
     isLoading,

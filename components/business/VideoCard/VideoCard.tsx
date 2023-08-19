@@ -33,22 +33,12 @@ export const VideoCard: FC<IProps> = ({
   channelUrl,
   channelVerified,
 }) => {
-  const onVideoClickHandler = () => {
-    console.log("NAvigate to video", videoId);
-    window.open("/watch?videoId=" + videoId, "_blank");
-  };
-
-  const onChannelClickHandler = (event: MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation();
-    const nextLink = `/channel?channelId=${channelUrl.replace(
-      "/channel/",
-      ""
-    )}`;
-    window.open(nextLink, "_blank");
-  };
-
   return (
-    <Link className={styles.videocard} href={`/watch/${videoId}`}>
+    <Link
+      className={styles.videocard}
+      href={`/watch/${videoId}`}
+      target="_blank"
+    >
       <div className={styles.thumbnailcontainer}>
         <Image
           className={styles.thumbnail}
@@ -67,7 +57,7 @@ export const VideoCard: FC<IProps> = ({
         </Chip>
         <Chip>{dateAgo}</Chip>
       </div>
-      <Link href={channelUrl} className={styles.channelinfo}>
+      <Link href={channelUrl} className={styles.channelinfo} target="_blank">
         {/* <img
           className={styles.avatar}
           src={channelAvatar}

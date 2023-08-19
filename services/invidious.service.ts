@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ITrendVideoI, IVideoI } from "@/types/invidious.interface";
+import { IChannel, ITrendVideoI, IVideoI } from "@/types/invidious.interface";
 
 const INSTANCE = "invidious.tiekoetter.com";
 
@@ -13,15 +13,15 @@ export const InvidiousApi = {
     const response = await axios.get<ITrendVideoI[]>(`${BASE_URL}trending`);
     return response.data;
   },
-  //   async getChannel(channelId: string | undefined): Promise<IChannel> {
-  //     if (typeof channelId == undefined) {
-  //       channelId = "UCNPUUqi4kqjeaScWtsvfyvw";
-  //     }
-  //     const response = await axios.get<IChannel>(
-  //       `https://${BASE_URL}/channel/${channelId}`
-  //     );
-  //     return response.data;
-  //   },
+  async getChannel(channelId: string | undefined): Promise<IChannel> {
+    if (typeof channelId == undefined) {
+      channelId = "UCNPUUqi4kqjeaScWtsvfyvw";
+    }
+    const response = await axios.get<IChannel>(
+      `${BASE_URL}channels/${channelId}`
+    );
+    return response.data;
+  },
   async getVideo(videoId: string | undefined): Promise<IVideoI> {
     if (typeof videoId == undefined) {
       videoId = "flSHNGJK8UE";

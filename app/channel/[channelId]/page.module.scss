@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 75px;
+
+  .banner {
+    width: 100%;
+    height: 200px;
+  }
+  .channelcard {
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid var(--element-border);
+    border-radius: var(--round);
+    gap: 8px;
+
+    .channelavatar {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--round);
+    }
+
+    .channelinfo {
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+      gap: 8px;
+      // background-color: red;
+      .channelstatistics {
+        display: flex;
+        gap: 8px;
+      }
+    }
+  }
+
+  .channelvideos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-height: 100%;
+    margin-top: 75px;
+  }
+
+  @media (max-width: 1200px) {
+    .channelvideos {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .channelvideos {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .channelvideos {
+      padding: 10px;
+      grid-template-columns: 1fr;
+    }
+  }
+}
