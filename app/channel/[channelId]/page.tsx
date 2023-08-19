@@ -7,7 +7,7 @@ import { Loader } from "@/components/ui/Loader/Loader";
 import { InvidiousApi } from "@/services/invidious.service";
 import styles from "./page.module.scss";
 
-export const ChannelPage = () => {
+const ChannelPage = () => {
   const params = useParams();
   const channelId = params["channelId"] as string;
   const {

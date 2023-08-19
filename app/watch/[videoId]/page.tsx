@@ -29,7 +29,7 @@ const page = ({}) => {
 
   if (!videoData?.videoThumbnails) return "Loading...";
   if (isLoading) return "loading";
-  if (error) return `${error.message}`;
+  if (error) return `error`;
 
   return (
     <div>
